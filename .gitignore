@@ -1,0 +1,9 @@
+# 個人用の Claude Code 設定（共有しない）
+.claude/settings.local.json
+
+# 試行の記録（試したプロジェクトの中身が入るため、手元にだけ置く）
+feedback/*
+!feedback/README.md
+
+# OS
+.DS_Store
