@@ -45,7 +45,7 @@ description: プロジェクトに合わせて、AI エージェントが迷わ�
 
 ## 5. 検証
 
-- 生成物に目印（`PROJECT`、`TODO`、`<!-- L1 -->` など）が残っていない。AGENTS.md と README.md のリンク先がすべてある
+- 生成物に、目印と埋める箇所（`<!-- L1 -->`、`PROJECT`、`TODO`、`YYYY-MM-DD` など。一覧と、残してよいものは [generation.md](references/generation.md)）が残っていない。生成した Markdown のリンク先がすべてある
 - AGENTS.md に書いたコマンド（起動・テスト・lint・formatter）を実行し、すべて動く
 - `.claude/settings.json` と `.codex/hooks.json` が正しい JSON。hook のスクリプトに止めるべき入力と通すべき入力を渡し、終了コードが期待どおり（止めるなら 2、通すなら 0）
 - AGENTS.md の各行について、その行がなければエージェントがこのプロジェクトで間違えるかを考え、間違えない行（どのプロジェクトにも言える一般論、コードを読めば分かること）は消す

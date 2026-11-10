@@ -30,5 +30,5 @@
 - **回数**: 複数回（日付の記録なし）
 - **ツール・モデル**: Claude Code / Opus 5.5（モデル特有かは不明）
 - **原因**: 指示がなかった
-- **対策**: テンプレートの `CLAUDE.md` と、このリポジトリの `CLAUDE.md` に指示を追加。formatter などは pre-commit と CI にも置くよう `references/agent-tools.md` に記載
+- **対策**: `CLAUDE.md` のテンプレート（`claude-instructions.md`）と、このリポジトリの `CLAUDE.md` に指示を追加。formatter などは pre-commit と CI にも置くよう `references/agent-tools.md` に記載
 - **見直す条件**: モデルを更新したとき

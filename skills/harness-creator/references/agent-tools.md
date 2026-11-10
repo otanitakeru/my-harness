@@ -26,7 +26,7 @@ hook の登録はツールごとに書く必要があるが、形はほぼ同じ
 
 エージェントの hook と権限設定は、エージェントがファイル編集のツール（Claude Code の `Edit` / `Write`、Codex の `apply_patch`）を使わず、スクリプトでファイルを書き換えると働かない。そのため、次の3段で守る。
 
-1. 指示で、ファイル編集のツールを使わせる（Claude Code は `CLAUDE.md` のテンプレートに入っている）
+1. 指示で、ファイル編集のツールを使わせる（Claude Code は `CLAUDE.md` のテンプレート `claude-instructions.md` に入っている）
 2. formatter と lint は、hook だけでなく pre-commit と CI にも置く。どの方法で書き換えても検査される
 3. それでもスクリプトでの書き換えが続く場合は、Bash の PreToolUse hook で `sed -i` や `python -c` による書き込みを検出して止める（検出は完全ではない）
 
@@ -44,7 +44,7 @@ hook の登録はツールごとに書く必要があるが、形はほぼ同じ
 
 ## 指示
 
-- テンプレートは `assets/templates/AGENTS.md` と `assets/templates/CLAUDE.md`
+- テンプレートは `assets/templates/AGENTS.md` と、`CLAUDE.md` になる `assets/templates/claude-instructions.md`
 - `CLAUDE.md` では、`@AGENTS.md` をファイル名の大文字・小文字まで正確に書く（Linux では区別されるため）。シンボリックリンクより `@` での読み込みを使う。コピーしても壊れず、Claude Code 固有の指示も足せるため
 - ツール名（`Edit`、`Write` など）に関わる指示は、`AGENTS.md` ではなく `CLAUDE.md` に書く
 - Codex は `AGENTS.md` を既定で 32KiB までしか読まない。超えた分は読まれないので、約100行の目安を守る
