@@ -20,7 +20,6 @@
 4. オーナーの感想を聞き、feedback の「ヒアリング」を埋める
 5. 既存のプロジェクトと Codex でも試す。Codex では skill を `~/.agents/skills/` にリンクして使う（公式ドキュメントでは、シンボリックリンクも読まれる）。試したら、README に Codex での入れ方を足す
 6. `docs/vision.md` の TODO を埋める（オーナー）。空のフォルダでの試行が1回済んだので、マイルストーンの「いまここ」とゴールの1つ目も見直す
-7. 案（未決定）: Modern Web Guidance（Chrome チームが出している、Web 標準の知識と互換性の情報をコーディングエージェントに渡す skill。https://developer.chrome.com/docs/modern-web-guidance ）を、Web の frontend のプロジェクトで勧めるか、生成物に組み込むかを考える。決めること: 勧めるだけにするか、`guidelines/` と役割が重なるか（重なるなら、どちらを正にするか）、frontend のプロジェクトだけに出すこと、外部の skill に頼る分の更新や版の追従。使うと決めたら、効果を実際のプロジェクトで試してから `docs/decisions.md` に判断を残す
 
 ## 注意・分かったこと
 
