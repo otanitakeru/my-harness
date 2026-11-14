@@ -15,11 +15,11 @@
 | 原則（どう決めるか） | [docs/guidelines/](docs/guidelines/) <!-- PROJECT: 入れたファイルを列挙 --> | <!-- L1 -->
 | タスク一覧 | [feature_list.json](feature_list.json) | <!-- L2 -->
 
-実装・レビューの前に、`docs/decisions.md` の要件と、見出しから選んだ関係する判断、関係するガイドラインを読むこと。見出しは `grep -n "^##" docs/decisions.md` で一覧にし、全文は読まない。 <!-- L1 -->
+実装・レビューの前に、`docs/decisions.md` の要件と、見出しから選んだ関係する判断と、ガイドラインの関係する節を読むこと。見出しは `grep -n "^##" docs/decisions.md docs/guidelines/*.md` で一覧にし、全文は読まない。 <!-- L1 -->
 
 ## コマンド
 
-<!-- PROJECT: 実際に動くことを確かめたコマンドだけを書く -->
+<!-- PROJECT: 実際に動くことを確かめたコマンドだけを書く。テスト・lint・型チェックは失敗だけを出す形で書く（generation.md） -->
 - 起動: `TODO`
 - テスト: `TODO`（1つのテストだけを実行: `TODO`）
 - lint / 型チェック: `TODO`
