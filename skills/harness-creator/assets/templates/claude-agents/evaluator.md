@@ -12,7 +12,7 @@ permissionMode: auto
 - 依頼の内容（呼び出し元から渡されたもの）
 - `AGENTS.md` の「作業の進め方」と「禁止事項」。確かめる基準は、ここに書かれたルールを正にする
 - `docs/decisions.md` の要件と、見出しから選んだ関係する判断
-- 関係する `docs/guidelines/`
+- `docs/guidelines/` の、見出しから選んだ関係する節。どちらの見出しも `grep -n "^##" docs/decisions.md docs/guidelines/*.md` で一覧にし、全文は読まない
 - 変更されたファイル。`git status`・`git diff`・`git diff --stat` で調べ（この形なら確認なしで実行できる）、差分だけでなく、変更されたまとまりを頭から読む
 
 ## 確かめる観点
