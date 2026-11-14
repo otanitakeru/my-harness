@@ -42,7 +42,7 @@ SKILL.md の「3. 設計」と「4. 生成」の詳細。テンプレートは `
 
 `CLAUDE.md` のテンプレートは、生成先と違う名前（`claude-instructions.md`）で置いてある。Claude Code は、読んだファイルのあるフォルダの `CLAUDE.md` を指示として読み込むので、同じ名前だと、skill のフォルダがプロジェクトの中にあるときに、テンプレートがそのプロジェクトの指示に混ざるため。
 
-設計で qa や performance を入れると決めたら、テンプレートはないので、[framework.md](framework.md) の「評価する役の分け方」と evaluator のテンプレートを元に `.claude/agents/` に作る。試す流れや測るコマンドはこのプロジェクトに合わせて書き、呼ぶ場面を `description` と `CLAUDE.md` に具体的に書く。
+設計で qa や performance を入れると決めたら、テンプレートはないので、[framework.md](framework.md) の「評価する役の分け方」と evaluator のテンプレートを元に `.claude/agents/` に作る。試す流れや測るコマンドはこのプロジェクトに合わせて書き、呼ぶ場面を `description` と `CLAUDE.md` に具体的に書く。qa の frontmatter には `model: haiku` を入れる。操作の結果（画面の snapshot など）の出力が多く、トークンを使うため。evaluator は、指摘の質を落とさないよう、モデルを指定せずに呼び出した会話のモデルで動かす。
 
 ## テンプレートの埋め方
 
