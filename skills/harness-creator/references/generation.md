@@ -12,6 +12,7 @@ SKILL.md の「3. 設計」と「4. 生成」の詳細。テンプレートは `
   - AGENTS.md / CLAUDE.md
   - README.md（既存のものを、テンプレートの構成に合わせて書き直す案）
   - docs/decisions.md, docs/progress.md, docs/failures.md
+  - docs/local/progress.md, docs/local/failures.md: 一人の作業と環境の記録。.gitignore に docs/local/ を足す
   - docs/guidelines/: documentation.md, design.md, coding.md
   - scripts/hooks/: 危険なコマンドを止める、編集したファイルを prettier で整形する
   - .claude/settings.json: .env の読み取りの禁止、読み取りとテストのコマンドの許可、上のスクリプトを呼ぶ hook
@@ -30,8 +31,10 @@ SKILL.md の「3. 設計」と「4. 生成」の詳細。テンプレートは `
 | `claude-instructions.md` | `CLAUDE.md` | 全部（Claude Code） | `@AGENTS.md` と、Claude Code 固有の指示 |
 | `README.md` | `README.md` | 全部 | 概要・起動方法・案内だけ |
 | `decisions.md` | `docs/decisions.md` | L1〜 | 要件と設計判断の記録 |
-| `progress.md` | `docs/progress.md` | L1〜 | 今の状態だけ（毎回書き換える） |
-| `failures.md` | `docs/failures.md` | L1〜 | エージェントの失敗と対策、対策の置き場所の選び方 |
+| `progress.md` | `docs/progress.md` | L1〜 | 全員に関わる今の状態だけ（毎回書き換える） |
+| `progress.md` | `docs/local/progress.md` | L1〜 | 自分の作業の今の状態。git に入れない |
+| `failures.md` | `docs/failures.md` | L1〜 | 誰に起きてもおかしくない失敗と対策、対策の置き場所の選び方 |
+| `failures.md` | `docs/local/failures.md` | L1〜 | 一人の環境や使い方でだけ起きた失敗。git に入れない |
 | `guidelines/*.md` | `docs/guidelines/*.md` | L1〜 | 設計で選んだものだけをコピー |
 | `scripts/hooks/*.sh` | `scripts/hooks/*.sh` | L1〜 | hook の処理の本体。Claude Code と Codex で共有 |
 | `claude-settings.json` | `.claude/settings.json` | L1〜（Claude Code） | 権限設定と、スクリプトを呼ぶ hook |
@@ -41,6 +44,8 @@ SKILL.md の「3. 設計」と「4. 生成」の詳細。テンプレートは `
 | `init.sh` | `init.sh` | L2 | セッション開始時の起動スクリプト |
 
 `CLAUDE.md` のテンプレートは、生成先と違う名前（`claude-instructions.md`）で置いてある。Claude Code は、読んだファイルのあるフォルダの `CLAUDE.md` を指示として読み込むので、同じ名前だと、skill のフォルダがプロジェクトの中にあるときに、テンプレートがそのプロジェクトの指示に混ざるため。
+
+記録は、一人で開発するプロジェクトでも、全員に関わるもの（`docs/`）と一人のもの（`docs/local/`）に分けて作る。`docs/` の記録は git で共有され、全員のエージェントが指示として読むので、一人の環境や作業の事情が混ざると、ほかの人のエージェントの動きまで変わるため。人数によって構成を変えないのは、あとから人が増えても書く先が変わらず、エージェントが毎回同じ基準で振り分けられるようにするため。`docs/local/` の2つは、`docs/progress.md`・`docs/failures.md` の冒頭の案内に書いた形で作り、中身は空にする（全員用の案内、防止策の置き場所の表、記入例は写さない）。`.gitignore` に `docs/local/` を足し（なければ作る）、`git status` に出ないことを確かめる。
 
 設計で qa や performance を入れると決めたら、テンプレートはないので、[framework.md](framework.md) の「評価する役の分け方」と evaluator のテンプレートを元に `.claude/agents/` に作る。試す流れや測るコマンドはこのプロジェクトに合わせて書き、呼ぶ場面を `description` と `CLAUDE.md` に具体的に書く。qa の frontmatter には `model: haiku` を入れる。操作の結果（画面の snapshot など）の出力が多く、トークンを使うため。evaluator は、指摘の質を落とさないよう、モデルを指定せずに呼び出した会話のモデルで動かす。
 
