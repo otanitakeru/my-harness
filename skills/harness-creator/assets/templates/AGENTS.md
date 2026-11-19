@@ -15,7 +15,7 @@
 | 原則（どう決めるか） | [docs/guidelines/](docs/guidelines/) <!-- PROJECT: 入れたファイルを列挙 --> | <!-- L1 -->
 | タスク一覧 | [feature_list.json](feature_list.json) | <!-- L2 -->
 
-実装・レビューの前に、`docs/decisions.md` の要件と、見出しから選んだ関係する判断と、ガイドラインの関係する節を読むこと。見出しは `grep -n "^##" docs/decisions.md docs/guidelines/*.md` で一覧にし、全文は読まない。 <!-- L1 -->
+実装・レビューの前に、`docs/decisions.md` の「要件」の節を全部読み、判断とガイドラインは見出しから関係するものだけを選んで読むこと。見出しは `grep -n "^##" docs/decisions.md docs/guidelines/*.md` で一覧にする。 <!-- L1 -->
 
 ## コマンド
 
