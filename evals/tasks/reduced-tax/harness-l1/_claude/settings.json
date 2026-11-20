@@ -5,7 +5,7 @@
       "Bash(git diff)",
       "Bash(git diff --stat)",
       "Bash(git log --oneline -20)",
-      "Bash(python3 -m unittest -q)"
+      "Bash(python3 -m unittest)"
     ],
     "deny": [
       "Read(**/.env)",
