@@ -32,11 +32,12 @@
 | 今の状態（毎回書き換える） | `docs/progress.md` |
 | エージェントの失敗と対策 | `docs/failures.md` |
 | skill を実際のプロジェクトで試した結果 | `feedback/`（git には入れない。書き方と改善に回す基準は `feedback/README.md`） |
+| ハーネスの効き目を、条件を変えた自動実行で比べる仕組み | `evals/`（実行のしかたは `evals/README.md`。結果は git に入れない） |
 
 - `references/principles.md`（ハーネスの原則）と `guidelines/`（プロジェクトのコードの原則）は別物。混ぜない
 - `SKILL.md` は 8,000 バイト以内に収める（Codex がそれを超えた本文を切るため）。変えたら `wc -c` で確かめ、詳しい説明は `references/` に移す
 - 対策の置き場所の表は、`references/framework.md` と、生成先で使う `assets/templates/failures.md` の2か所にある（生成先には skill の参照ファイルがないため）。変えるときは両方直す
-- まだ作っていないもの（`scripts/` での生成・検査の自動化、`evals/` での skill の動作確認）は、必要になってから作る
+- まだ作っていないもの（`scripts/` での生成・検査の自動化）は、必要になってから作る
 
 ## 作業手順
 
