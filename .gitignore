@@ -5,5 +5,11 @@
 feedback/*
 !feedback/README.md
 
+# 評価の実行結果（会話の全体が入り、大きくなるため）
+evals/results/
+
+# Python のキャッシュ（evals/ の metrics.py を実行すると作られる）
+__pycache__/
+
 # OS
 .DS_Store
