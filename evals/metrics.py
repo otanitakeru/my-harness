@@ -13,9 +13,10 @@
 - stale: 古い記述の正規表現（1行に1つ。# で始まる行は飛ばす）に当たった行。置き場所ごとに分ける
   - code: テスト以外のコード / docs: 決まりなどの文書 / harness: AGENTS.md・CLAUDE.md
 - history_words: コードと文書にある、経緯を書いた言葉（「以前は」「従来」など）。変更を継ぎ足して書いた跡の目安。
-  経緯は記録（progress.md・decisions.md など）に書くもので、そこは数えない。AGENTS.md・CLAUDE.md も数えない（条件によってあるかないかが違い、元から書かれた言葉が差に混ざるため）
+  経緯を書いてよい記録は数えない。AGENTS.md・CLAUDE.md も数えない（条件によってあるかないかが違い、元から書かれた言葉が差に混ざるため）
 
-ハーネスの記録（docs/progress.md・decisions.md・failures.md と docs/local/）は、経緯を書く場所なので、stale と history_words では数えない。
+ハーネスの記録は、経緯を書く場所なので、stale と history_words では数えない。今の skill が作るのは docs/failures.md だけで、
+docs/progress.md・decisions.md と docs/local/ は、前の skill で作ったハーネスの結果を数え直すときのために残している。
 """
 
 import ast
