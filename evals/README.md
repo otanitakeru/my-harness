@@ -61,6 +61,6 @@ evals/summarize.sh reduced-tax         # 結果を依頼・条件ごとの表に
 
 ### ハーネスの置き方
 
-`make-harness.sh` は、一時フォルダで `claude -p` に skill の手順で生成させ、変わったファイルだけを `harness-l1/` に写す。git に入れないもの（`docs/local/`）は写さず、clone した直後と同じ状態にする。`CLAUDE.md` は `claude-instructions.md`、`.claude/` は `_claude/` という名前で置き、`run.sh` が写すときに戻す。元の名前のままだと、このリポジトリで作業する Claude Code が、そのフォルダを読んだときに指示や設定として読み込むため。
+`make-harness.sh` は、一時フォルダで `claude -p` に skill の手順で生成させ、変わったファイルだけを `harness-l1/` に写す。`CLAUDE.md` は `claude-instructions.md`、`.claude/` は `_claude/` という名前で置き、`run.sh` が写すときに戻す。元の名前のままだと、このリポジトリで作業する Claude Code が、そのフォルダを読んだときに指示や設定として読み込むため。
 
-skill を変えたら、`harness-l1/` を作り直す。生成したモデルは `harness-l1/docs/decisions.md` に残る。生成したときの skill のコミットは `make-harness.sh` が最後に出すので、`harness-l1/` を足すコミットのメッセージに書く。`small-fix` のようにリンクで共有しているタスクは、リンク先のタスクで作り直す。
+skill を変えたら、`harness-l1/` を作り直す。生成したモデルと、生成したときの skill のコミット（`make-harness.sh` が最後に出す）は、`harness-l1/` を足すコミットのメッセージに書く。`small-fix` のようにリンクで共有しているタスクは、リンク先のタスクで作り直す。
