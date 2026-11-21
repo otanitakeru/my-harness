@@ -10,6 +10,7 @@
 
 | 内容 | 場所 |
 |---|---|
+| 目標・完成の条件・扱わない範囲 | [docs/goal.md](docs/goal.md) | <!-- GOAL -->
 | 使い方 | <!-- PROJECT: docs/usage.md など。なければ行ごと消す --> |
 | 開発の原則 | [docs/guidelines/](docs/guidelines/) | <!-- L1 -->
 | AI エージェント向けの指示 | [AGENTS.md](AGENTS.md) |
